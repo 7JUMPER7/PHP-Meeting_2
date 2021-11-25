@@ -1,0 +1,5 @@
+<?php
+    echo "<div class='container'>";
+    echo "<h1>Home page</h1>";
+    echo "</div>";
+?>
