@@ -7,8 +7,7 @@
             $date = new DateTime();
             $date->setISODate($year, $week);
 
-            // $date->format("F, Y")
-            echo "<div class='tableContainer'><span class='year'>".''."</span><table>
+            echo "<div class='tableContainer'><span class='year'>".date("F, Y", mktime(0, 0, 0,$month, 1, $year))."</span><table>
             <thead>
                     <tr>
                         <th>M</th>
@@ -26,9 +25,9 @@
                 do {
                     echo "<tr>";
                     for($j = 0; $j < 7; $j++) {
-                        if($date->format('n') != $month) {
+                        if($date->format('n') != $month) {  // Если день из другого месяца, то делаю его полупрозрачным
                             echo "<td class='wrong ".(($j >= 5) ? 'weekends' : '')."'>".$date->format('j')."</td>";
-                        } else {
+                        } else { // Если день из нужного месяца, делаю его непрозрачным
                             echo "<td class='correct ".(($j >= 5) ? 'weekends' : '')."'>".$date->format('j')."</td>";
                         }
                         $date->modify('+1 day');

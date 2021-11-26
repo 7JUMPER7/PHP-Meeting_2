@@ -10,7 +10,7 @@
 <body>
     <?php
         include_once("./Calendar.php");
-        generateCalendar(12);
+        generateCalendar(9);
     ?>
 </body>
 </html>
